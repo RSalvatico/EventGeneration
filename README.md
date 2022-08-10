@@ -1,6 +1,6 @@
 # EventGeneration
 
-This is a basic set of instructions to generate events starting from a certain CMS central MC production, whose steps one can track down on McM. Some more thorough material can be found here:
+This is a set of instructions to generate events starting from a certain CMS central MC production, whose steps one can track down on McM. Some more general and official material can be found here:
 
 https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookGenIntro
 
@@ -84,3 +84,11 @@ dasgoclient -query="file dataset=/dataset_name instance=prod/phys03"
 ```
 
 Note that the output file for one simulation step will have to be the input file for the following step, of course.
+
+## Modifying Pythia fragments
+
+If you want to change something ~basic in the hadronization part of your process (or anyway in whatever part of the interaction Pythia handles in your production), you can modify the Pythia fragment. In this repository, you can find an example of an N2(->Z+N1)C1(->W+N1) model modified such that N2->C1W.
+
+## Some extra tools
+
+Under the `test/` directory, you can find a cmssw config to run an analyzer (`plugins/InspectGenparticles.cc`) which does some basic checks on the genparticles. You can use it as a baseline and customize it as you like.
