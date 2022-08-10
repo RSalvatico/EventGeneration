@@ -8,16 +8,16 @@ process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
 
 process.source = cms.Source("PoolSource",
                                 fileNames = cms.untracked.vstring(
-            'root://cms-xrd-global.cern.ch//store/user/rselvati/WMinusPiGamma_DirectProduction_102X_2018_v1/WMinusPiGamma_DirectProduction_GENSIM_102X_2018_v1/200603_205320/0000/WMinusPiGamma_pythia8_DirectProduction_GENSIM_2018_102.root'
+            'file:'
                 )
                             )
 
 #Output file
 process.TFileService = cms.Service("TFileService",
-   fileName = cms.string("WDirectProduction_output.root")
+   fileName = cms.string("InspectGenparticles_output.root")
 )
 
-process.WDirectProduction = cms.EDAnalyzer('WDirectProduction'
+process.InspectGenparticles = cms.EDAnalyzer('InspectGenparticles'
                               )
 
-process.p = cms.Path(process.WDirectProduction)
+process.p = cms.Path(process.InspectGenparticles)
