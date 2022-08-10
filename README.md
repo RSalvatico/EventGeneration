@@ -16,8 +16,14 @@ So, to begin with, go on
 https://cms-pdmv.cern.ch/mcm/requests?page=0&shown=127
 
 and choose the input option "Output Dataset". This requires the exact dataset name as displayed on DAS. If we click on the "Show chained requests" symbol on the right of the `Dataset name`
+
 ![first_image](pics/McM_1.png)
-we'll be prompted to a page with several `PrepIds`, corresponding to the various campaigns. One of those corresponds to the specific dataset we are looking at (usually just check the version number). On the right of the same page, we'll see the `Chain` of processes that were involved in the creation of that dataset. Let's click on the first one (typically labeled *GS* as in GenSim). This will take us to a page where we'll see a few options under `Actions`. If we click on "Get setup command", we'll see exactly what was done to generate events for the desired process.
+
+we'll be prompted to a page with several `PrepIds`, corresponding to the various campaigns. One of those corresponds to the specific dataset we are looking at (usually just check the version number). On the right of the same page, we'll see the `Chain` of processes that were involved in the creation of that dataset.
+
+![second_image](pics/McM_2.png)
+
+Let's click on the first one (typically labeled *GS* as in GenSim). This will take us to a page where we'll see a few options under `Actions`. If we click on "Get setup command", we'll see exactly what was done to generate events for the desired process.
 
 In [this specific case](https://cms-pdmv.cern.ch/mcm/public/restapi/requests/get_setup/SUS-RunIIFall18GS-00002), we'll see that we have to set up a local repo with CMSSW_10_2_7, and then to get a Pythia fragment with
 ```
