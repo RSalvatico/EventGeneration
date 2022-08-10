@@ -1,4 +1,4 @@
-# EventGeneration
+# Event Generation
 
 This is a set of instructions to generate events starting from a certain CMS central MC production, whose steps one can track down on McM. Some more general and official material can be found here:
 
