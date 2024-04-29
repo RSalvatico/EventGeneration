@@ -11,7 +11,7 @@ process.source = cms.Source("PoolSource",
             'file:'
                 )
                             )
-
+process.source.duplicateCheckMode = cms.untracked.string('noDuplicateCheck')
 #Output file
 process.TFileService = cms.Service("TFileService",
    fileName = cms.string("InspectGenparticles_output.root")

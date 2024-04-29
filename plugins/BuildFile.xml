@@ -11,5 +11,5 @@
 <use   name="CommonTools/UtilAlgos"/>
 <lib   name="GenVector"/>
 <flags   EDM_PLUGIN="1"/>
-<library   file="InspectGenparticles.cc" name="InspectGenparticles">
+<library   file="GenInspector.cc" name="GenInspector">
 </library>

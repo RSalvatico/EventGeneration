@@ -10,35 +10,32 @@ class GenInspector : public edm::EDAnalyzer {
   virtual void beginJob() override;
   virtual void analyze(const edm::Event&, const edm::EventSetup&);
   virtual void endJob() override;
-
-  const edm::InputTag genParticles_;
+  static bool greaterThan (double i, double j) { return (i>j); }
 
   edm::Service<TFileService> fs;
 
-  //void create_trees();
+  void create_trees();
 
   // ---------- member data ----------- //
 
-  /* TTree *mytree; */
-
-  /* int genW_ID_tree; */
-  /* float genW_pT_tree; */
-  /* float genW_eta_tree; */
-  /* float genW_phi_tree; */
-  /* float genW_E_tree; */
-
-  /* int genPh_ID_tree; */
-  /* float genPh_pT_tree; */
-  /* float genPh_eta_tree; */
-  /* float genPh_phi_tree; */
-  /* float genPh_E_tree; */
-
-  /* int genPi_ID_tree; */
-  /* float genPi_pT_tree; */
-  /* float genPi_eta_tree; */
-  /* float genPi_phi_tree; */
-  /* float genPi_E_tree; */
-
-  edm::EDGetTokenT<std::vector<reco::GenParticle> > genParticlesToken_; 
+  TTree *mytree;
+  std::vector<int> lepID_tree;
+  std::vector<int> lepMother_tree;
+  std::vector<double> lepPt_tree;
+  int initialState_tree;
+  bool isLepFromSparticle_tree;
+  double genMET_tree;
+  int nLepEvent_tree;
+  double maxLepPtOne_tree;
+  double maxLepPtTwo_tree;
+  double maxLepPtThree_tree;
+  bool trMu24_tree;
+  bool trEle30_tree;
+  bool trEle23Ele12_tree;
+  bool trMu12Ele23_tree;
+  bool trMu23Ele12_tree;
+  
+  edm::EDGetTokenT<std::vector<reco::GenParticle> > genParticlesToken_;
+  edm::EDGetTokenT<std::vector<reco::GenMET> > genMETToken_; 
   //edm::EDGetTokenT<GenEventInfoProduct> GenInfoToken_;
 };
